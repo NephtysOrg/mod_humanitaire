@@ -1,0 +1,50 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Mod\IeC {\'e}lisation SysML}{4}{chapter.1}
+\contentsline {section}{\numberline {I}Introduction}{4}{section.1.1}
+\contentsline {section}{\numberline {II}D\IeC {\'e}finition du contexte du syst\IeC {\`e}me}{5}{section.1.2}
+\contentsline {subsection}{\numberline {II.1}Vue quasi-r\IeC {\'e}elle du syst\IeC {\`e}me}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {II.2}Diagramme de contexte}{7}{subsection.1.2.2}
+\contentsline {section}{\numberline {III}Diagrammes d'exigences}{8}{section.1.3}
+\contentsline {subsection}{\numberline {III.1}Hi\IeC {\'e}rarchie d'exigences}{8}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {III.2}Raffinement d'exigences}{9}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {III.3}D\IeC {\'e}tails d'exigences}{9}{subsection.1.3.3}
+\contentsline {subsubsection}{D\IeC {\'e}tail de Autonome}{10}{section*.3}
+\contentsline {subsubsection}{D\IeC {\'e}tail de Connect\IeC {\'e}}{10}{section*.4}
+\contentsline {subsubsection}{D\IeC {\'e}tail de Renseignable}{10}{section*.5}
+\contentsline {subsubsection}{D\IeC {\'e}tail de Interrogeable}{11}{section*.6}
+\contentsline {subsection}{\numberline {III.4}Table d'exigences}{12}{subsection.1.3.4}
+\contentsline {section}{\numberline {IV}Diagrammes de cas}{13}{section.1.4}
+\contentsline {subsubsection}{Haut niveau}{13}{section*.7}
+\contentsline {subsubsection}{Accro\IeC {\^\i }tre l'autonomie}{13}{section*.8}
+\contentsline {subsubsection}{Connecter}{14}{section*.9}
+\contentsline {subsubsection}{Interroger}{15}{section*.10}
+\contentsline {subsubsection}{Renseigner}{16}{section*.11}
+\contentsline {section}{\numberline {V}Diagrammes d'activit\IeC {\'e}}{17}{section.1.5}
+\contentsline {subsubsection}{Autonome}{17}{section*.12}
+\contentsline {subsubsection}{Connecter}{17}{section*.13}
+\contentsline {subsubsection}{Interroger}{18}{section*.14}
+\contentsline {subsubsection}{Renseigner}{18}{section*.15}
+\contentsline {section}{\numberline {VI}Diagrammes de s\IeC {\'e}quence}{19}{section.1.6}
+\contentsline {subsubsection}{Autonomie}{19}{section*.16}
+\contentsline {subsubsection}{Interroger}{20}{section*.17}
+\contentsline {subsubsection}{Renseigner}{21}{section*.18}
+\contentsline {section}{\numberline {VII}Conclusion}{22}{section.1.7}
+\contentsline {chapter}{\numberline {2}Mod\IeC {\'e}lisation UML}{23}{chapter.2}
+\contentsline {section}{\numberline {I}Introduction}{23}{section.2.1}
+\contentsline {section}{\numberline {II}D\IeC {\'e}finition du cahier des charges}{23}{section.2.2}
+\contentsline {section}{\numberline {III}R\IeC {\'e}ponses aux exigences}{23}{section.2.3}
+\contentsline {subsection}{\numberline {III.1}Permettre aux proches d'un sinistr\IeC {\'e} de pouvoir consulter les informations de celui-ci.}{23}{subsection.2.3.1}
+\contentsline {subsubsection}{\IeC {\'E}claircissement des notions}{23}{section*.19}
+\contentsline {subsection}{\numberline {III.2}Permettre \IeC {\`a} une ONG d'organiser et g\IeC {\'e}rer une campagne de vaccination.}{28}{subsection.2.3.2}
+\contentsline {subsubsection}{\IeC {\'E}claircissement des notions}{28}{section*.20}
+\contentsline {subsection}{\numberline {III.3}Permettre aux ONG de se coordonner.}{32}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {III.4}Permettre au personnel sur place de g\IeC {\'e}rer les stocks dans les infrastructures.}{32}{subsection.2.3.4}
+\contentsline {subsubsection}{\IeC {\'E}claircissement des notions}{32}{section*.21}
+\contentsline {subsection}{\numberline {III.5}Permettre l'information pertinente des populations.}{35}{subsection.2.3.5}
+\contentsline {subsubsection}{\IeC {\'E}claircissement des notions}{35}{section*.22}
+\contentsline {section}{\numberline {IV}Diagrammes compl\IeC {\'e}mentaires}{37}{section.2.4}
+\contentsline {subsection}{\numberline {IV.1}Diagrammes de Cas}{37}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {IV.2}Diagrammes de Classe}{38}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {IV.3}Diagrammes d\IeC {\textquoteright }\IeC {\'E}tat}{39}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {IV.4}Diagrammes d'Activit\IeC {\'e}}{40}{subsection.2.4.4}
+\contentsline {section}{\numberline {V}Conclusion}{42}{section.2.5}

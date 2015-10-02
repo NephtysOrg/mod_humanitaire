@@ -1,0 +1,51 @@
+\select@language {french}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Vue syst\IeC {\`e}me uniquement}}{5}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Vue syst\IeC {\`e}me et ext\IeC {\'e}rieur}}{5}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Vue syst\IeC {\`e}me, ext\IeC {\'e}rieur et relations}}{6}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Diagramme de contexte}}{7}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Exigences initiales}}{8}{figure.1.5}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Raffinement des exigences}}{9}{figure.1.6}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Exigence : Autonome}}{10}{figure.1.7}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Exigence : Connect\IeC {\'e}}}{10}{figure.1.8}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Exigence : Renseignable}}{10}{figure.1.9}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Exigence : Interrogeable}}{11}{figure.1.10}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Table d'exigences}}{12}{figure.1.11}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Use case - Haut niveau}}{13}{figure.1.12}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Use case - Autonomie}}{13}{figure.1.13}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Use case - Connecter}}{14}{figure.1.14}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Use case - Interroger}}{15}{figure.1.15}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Use case - Renseigner}}{16}{figure.1.16}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Activit\IeC {\'e} - Autonome}}{17}{figure.1.17}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Activit\IeC {\'e} - Connecter}}{17}{figure.1.18}
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Activit\IeC {\'e} - Interroger}}{18}{figure.1.19}
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Activit\IeC {\'e} - Renseigner}}{18}{figure.1.20}
+\contentsline {figure}{\numberline {1.21}{\ignorespaces S\IeC {\'e}quence - Autonome}}{19}{figure.1.21}
+\contentsline {figure}{\numberline {1.22}{\ignorespaces S\IeC {\'e}quence - Interroger}}{20}{figure.1.22}
+\contentsline {figure}{\numberline {1.23}{\ignorespaces S\IeC {\'e}quence - Renseigner}}{21}{figure.1.23}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Cas - Notion d'information}}{24}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Classe participante - Recherche}}{24}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Classe - Notion d'information}}{24}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \IeC {\'E}tat - G\IeC {\'e}rer les mouvements}}{25}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Activit\IeC {\'e} - G\IeC {\'e}rer les mouvements}}{26}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Activit\IeC {\'e} - Rechercher un r\IeC {\'e}fugi\IeC {\'e}}}{27}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Cas - Notion d'ONG}}{28}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Cas - Gestion d'une campagne}}{28}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Classe - Notion d'ONG / campagne}}{29}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \IeC {\'E}tat - Gestion d'une campagne}}{30}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Activit\IeC {\'e} - Gestion d'une campagne}}{31}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Cas - Notion de stock}}{32}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Classe - Notion de stock}}{33}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \IeC {\'E}tat - Gestion du stock}}{33}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Activit\IeC {\'e} - Gestion du stock}}{34}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Cas - Notion de message}}{35}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Classe - Notion de message}}{35}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces \IeC {\'E}tat - Diffusion d'information}}{36}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Activit\IeC {\'e} - Diffusion d'information}}{36}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Cas - G\IeC {\'e}n\IeC {\'e}ral}}{37}{figure.2.20}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Classe - G\IeC {\'e}n\IeC {\'e}ral}}{38}{figure.2.21}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces \IeC {\'E}tat - Recherche personne}}{39}{figure.2.22}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Activit\IeC {\'e} - Cr\IeC {\'e}er compte}}{40}{figure.2.23}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Activit\IeC {\'e} - G\IeC {\'e}rer compte}}{41}{figure.2.24}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Activit\IeC {\'e} - Recherche lieu}}{41}{figure.2.25}
