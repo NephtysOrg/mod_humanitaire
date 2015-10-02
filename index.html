@@ -1,705 +1,532 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Humanitarian Modeling : Modélisation d&#39;un système d&#39;information dédié à l&#39;humanitaire">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="description" content="Humanitarian Modeling : Modélisation d&#39;un système d&#39;information dédié à l&#39;humanitaire">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Humanitarian Modeling</title>
-  </head>
+        <title>Humanitarian Modeling</title>
+    </head>
 
-  <body>
+    <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/NephtysOrg/mod_humanitaire">View on GitHub</a>
+        <!-- HEADER -->
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <a id="forkme_banner" href="https://github.com/NephtysOrg/mod_humanitaire">View on GitHub</a>
 
-          <h1 id="project_title">Humanitarian Modeling</h1>
-          <h2 id="project_tagline">Modélisation d&#39;un système d&#39;information dédié à l&#39;humanitaire</h2>
+                <h1 id="project_title">Humanitarian Modeling</h1>
+                <h2 id="project_tagline">Modélisation d&#39;un système d&#39;information dédié à l&#39;humanitaire</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/NephtysOrg/mod_humanitaire/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/NephtysOrg/mod_humanitaire/tarball/master">Download this project as a tar.gz file</a>
+                <section id="downloads">
+                    <a class="zip_download_link" href="https://github.com/NephtysOrg/mod_humanitaire/zipball/master">Download this project as a .zip file</a>
+                    <a class="tar_download_link" href="https://github.com/NephtysOrg/mod_humanitaire/tarball/master">Download this project as a tar.gz file</a>
+                </section>
+            </header>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                <p><div class="toc">
+                    <ul>
+                        <li><ul>
+                                <li><a href="#partie-i-approche-de-modélisation-système-sysml">Partie I : Approche de modélisation Système (SysML)</a><ul>
+                                        <li><ul>
+                                                <li><a href="#i-introduction">I- Introduction</a></li>
+                                                <li><a href="#ii-définition-du-contexte-du-système">II- Définition du contexte du système</a><ul>
+                                                        <li><a href="#ii1-vue-quasi-réelle-du-système">II.1- Vue quasi-réelle du système</a></li>
+                                                        <li><a href="#ii2-diagramme-de-contexte">II.2- Diagramme de contexte</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#iii-les-diagrammes-dexigences">III- Les diagrammes d’exigences</a><ul>
+                                                        <li><a href="#iii1-hiérarchie-dexigences">III.1- Hiérarchie d’exigences</a></li>
+                                                        <li><a href="#iii2-raffinement-dexigences">III.2- Raffinement d’exigences</a></li>
+                                                        <li><a href="#iii3-détails-dexigences">III.3- Détails d’exigences</a></li>
+                                                        <li><a href="#iii31-détail-de-autonome">III.3.1-Détail de Autonome</a></li>
+                                                        <li><a href="#iii32-détail-de-connecté">III.3.2-Détail de connecté</a></li>
+                                                        <li><a href="#iii33-détail-de-renseignable">III.3.3-Détail de Renseignable</a></li>
+                                                        <li><a href="#iii33-détail-de-interrogeable">III.3.3-Détail de Interrogeable</a></li>
+                                                        <li><a href="#iii4-table-dexigences">III.4- Table d’exigences</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#iv-les-diagrammes-de-cas">IV- Les diagrammes de cas</a></li>
+                                                <li><a href="#v-les-diagrammes-dactivité">V- Les diagrammes d’activité</a></li>
+                                                <li><a href="#vi-les-diagrammes-de-séquences">VI- Les diagrammes de séquences</a></li>
+                                                <li><a href="#vii-conclusion">VII- Conclusion</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#partie-ii-approche-de-modélisation-logicielle-uml">Partie II : Approche de modélisation logicielle (UML)</a><ul>
+                                        <li><ul>
+                                                <li><a href="#i-introduction-1">I-Introduction</a></li>
+                                                <li><a href="#ii-définition-du-cahier-des-charges">II-Définition du cahier des charges</a></li>
+                                                <li><a href="#iii-réponses-aux-exigences">III-Réponses aux exigences</a><ul>
+                                                        <li><a href="#iii1-permettre-aux-proches-dun-sinistré-de-pouvoir-consulter-les-informations-de-celui-ci">III.1- Permettre aux proches d’un sinistré de pouvoir consulter les informations de celui-ci</a></li>
+                                                        <li><a href="#iii2-permettre-à-une-ong-dorganiser-et-gérer-un-campagne-de-vaccination">III.2- Permettre à une ONG d’organiser et gérer un campagne de vaccination</a></li>
+                                                        <li><a href="#iii3-permettre-aux-ong-de-se-coordonner">III.3- Permettre aux ONG de se coordonner</a></li>
+                                                        <li><a href="#iii-3-permettre-aux-ong-de-se-coordonner">III-3 Permettre aux ONG de se coordonner</a></li>
+                                                        <li><a href="#iii-4-permettre-au-personnel-sur-place-de-gérer-les-stocks-dans-les-infrastructures">III-4 Permettre au personnel sur place de gérer les stocks dans les infrastructures</a></li>
+                                                        <li><a href="#iii-5-permettre-la-diffusion-de-messages-pertinents-aux-populations">III-5 Permettre la diffusion de messages pertinents aux populations</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#iv-diagrammes-complémentaires">IV-Diagrammes complémentaires</a><ul>
+                                                        <li><a href="#iv-1-diagrammes-de-cas">IV-1 Diagrammes de Cas</a></li>
+                                                        <li><a href="#iv-2-diagrammes-de-classe">IV-2 Diagrammes de Classe</a></li>
+                                                        <li><a href="#iv-3-diagrammes-detat">IV-3 Diagrammes d’Etat</a></li>
+                                                        <li><a href="#iv4-diagrammes-dactivité">IV.4 Diagrammes d’activité</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#v-conclusion">V-Conclusion</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr>
+
+
+
+                <h2 id="partie-i-approche-de-modélisation-système-sysml"><a href="#partie-i--approche-de-mod%C3%A9lisation-syst%C3%A8me-sysml"><span class="octicon octicon-link"></span></a>Partie I : Approche de modélisation Système (SysML)</h2>
+
+                <hr>
+
+
+
+                <h4 id="i-introduction"><a href="#i--introduction"><span class="octicon octicon-link"></span></a>I- Introduction</h4>
+
+                <p>Cette partie à pour objectif de fournir une description systémique répondant à la problématique qui est de pouvoir proposer une solution informatique afin d’améliorer la logistique sur le terrain, d’actions humanitaires. Nous allons d’abord introduire le système et son contexte dans la partie Définition du contexte du système afin de fixer les idées et de permettre la compréhension de la suite de ce document. Nous essaierons de répondre au maximum aux exigences imposées et induites dans l’appel d’offre dans la partie Diagramme d’exigences. Nous détaillerons ensuite quelques exigences à l’aide de diagrammes de Cas, d’Activité, de Séquence dans une optique de clarification. La partie sysML n’est pas exhaustive dans le sens ou un très grand nombre de diagrammes peuvent être ajoutés pour compléter cette documentation. Nous avons pertinemment sélectionné les diagrammes afin de fournir une vue simple et compréhensible. Notre démarche est guidée par l’exemple SysML de l’OMG suivant:  <br>
+                    <a href="http://www.omg.org/ocsmp/HSUV.pdf%28#http://www.omg.org/ocsmp/HSUV.pdf%29">http://www.omg.org/ocsmp/HSUV.pdf(#http://www.omg.org/ocsmp/HSUV.pdf</a></p>
+
+
+
+                <h4 id="ii-définition-du-contexte-du-système"><a href="#ii--d%C3%A9finition-du-contexte-du-syst%C3%A8me"><span class="octicon octicon-link"></span></a>II- Définition du contexte du système</h4>
+
+
+
+                <h5 id="ii1-vue-quasi-réelle-du-système"><a href="#ii1--vue-quasi-r%C3%A9elle-du-syst%C3%A8me"><span class="octicon octicon-link"></span></a>II.1- Vue quasi-réelle du système</h5>
+
+                <p>Les images suivantes représentent le système dans son environnement et les acteurs interagissants sur le système.</p>
+
+                <p><img src="images/schemas/humanitaire_system.png" alt="" title=""></p>
+
+                <p><img src="images/schemas/humanitaire_system_external.png" alt="" title=""></p>
+
+                <p><img src="images/schemas/humanitaire_system_external_links.png" alt="" title=""></p>
+
+                <p>Description des images dans II.2</p>
+
+
+
+                <h5 id="ii2-diagramme-de-contexte"><a href="#ii2--diagramme-de-contexte"><span class="octicon octicon-link"></span></a>II.2- Diagramme de contexte</h5>
+
+                <p><img src="images/diagrammes/sysml/contexte/context_diagram.png" alt="" title=""></p>
+
+                <p>Le système est composé d’un ensemble de terminaux (mobiles ou non) et d’un ensemble de serveurs. Les terminaux et les serveurs forment deux sous systèmes qui interagissent entre eux. Nous avons trouvé judicieux de réutiliser les systèmes déjà présents afin de rentabiliser les données et de collaborer avec le plus grand nombre. C’est pour cela que les serveurs du système doivent être capable de réutiliser les données des serveurs d’un organisme déjà présent. Par exemple, si un agent sur place travaille depuis 20 ans sur un projet et que toutes ses données sont stockées sur les serveurs d’une ONG, il parait aberrent de lui demander de ré-saisir les données en s’adaptant à notre application. Le système ainsi développé n’aurait aucun succès parmi les personnes déjà sur place. Un système dans un tel milieu fait face à des contraintes environnementales et a besoin de connectivités adaptables.</p>
+
+
+
+                <h4 id="iii-les-diagrammes-dexigences"><a href="#iii--les-diagrammes-dexigences"><span class="octicon octicon-link"></span></a>III- Les diagrammes d’exigences</h4>
+
+                <p>Pour répondre au mieux au vaste et libre sujet, nous avons sélectionné des exigences génériques que nous raffinons ensuite pour arriver à un niveau de détails suffisant. Certaines exigences significatives sont ensuite détaillées à l’aide d’autres diagrammes pour permettre leur compréhension et/ou leur traçabilité. Nous avons essaye le plus possible de nous détacher du prisme logiciel durant cette phase</p>
+
+
+
+                <h5 id="iii1-hiérarchie-dexigences"><a href="#iii1--hi%C3%A9rarchie-dexigences"><span class="octicon octicon-link"></span></a>III.1- Hiérarchie d’exigences</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/exigences_initiales.png" alt="" title=""></p>
+
+                <p>Voici une liste non exhaustive des exigences du système. Elles ont été choisies pour leur aspect fondamental  et générique. La documentation peut être directement trouvée sur le diagramme.</p>
+
+
+
+                <h5 id="iii2-raffinement-dexigences"><a href="#iii2--raffinement-dexigences"><span class="octicon octicon-link"></span></a>III.2- Raffinement d’exigences</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/exigences_raffinement.png" alt="" title=""></p>
+
+                <p>Voici un raffinement des feuilles de l’arbre de la partie III.1. La documentation peut être directement trouvée sur le diagramme</p>
+
+
+
+                <h5 id="iii3-détails-dexigences"><a href="#iii3--d%C3%A9tails-dexigences"><span class="octicon octicon-link"></span></a>III.3- Détails d’exigences</h5>
+
+                <p>Les exigences nécessitants un travail de réflexion particulier sont détaillées dans cette partie à l’aide de diagrammes de Cas 1 , Séquence et Activité. Ces diagrammes seront présentes dans leur partie respective. Ici nous présentons seulement la façon dont les exigences sont détaillées.</p>
+
+                <p>Note 1: Le lien “refine” est représente par une note dans notre AGL (Astah sysml)</p>
+
+
+
+                <h5 id="iii31-détail-de-autonome"><a href="#d%C3%A9tail-de-autonome"><span class="octicon octicon-link"></span></a>III.3.1-Détail de Autonome</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/autonomie_details.png" alt="" title=""></p>
+
+
+
+                <h5 id="iii32-détail-de-connecté"><a href="#d%C3%A9tail-de-connect%C3%A9"><span class="octicon octicon-link"></span></a>III.3.2-Détail de connecté</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/connecte_details.png" alt="" title=""></p>
+
+
+
+                <h5 id="iii33-détail-de-renseignable"><a href="#d%C3%A9tail-de-renseignable"><span class="octicon octicon-link"></span></a>III.3.3-Détail de Renseignable</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/renseignable_details.png" alt="" title=""></p>
+
+
+
+                <h5 id="iii33-détail-de-interrogeable"><a href="#d%C3%A9tail-de-interrogeable"><span class="octicon octicon-link"></span></a>III.3.3-Détail de Interrogeable</h5>
+
+                <p><img src="images/diagrammes/sysml/exigence/interrogeable_details.png" alt="" title=""></p>
+
+
+
+                <h5 id="iii4-table-dexigences"><a href="#iii4--table-dexigences"><span class="octicon octicon-link"></span></a>III.4- Table d’exigences</h5>
+
+                <p>Toutes les exigences et leur description sont exprimées dans le tableau suivant:</p>
+
+                <table><thead><tr><th>ID</th><th>Name</th><th>Text</th></tr></thead><tbody><tr><td>5</td><td>Résistance</td><td>Le système doit tenir face à des températures variables, des milieux humides et aussi à d’éventuels chocs</td></tr><tr><td>10</td><td>Autonomie</td><td>En cas de problème de courant, le système doit pouvoir continuer à assurer un fonctionnement minimal ou au moins ne pas perdre ses données</td></tr><tr><td>6</td><td>Durable</td><td>Le système doit pouvoir être mis en place pour une durée particulièrement longue</td></tr><tr><td>9</td><td>Portabilité</td><td>Le système doit pouvoir être positionné dans des zones accidentés et critiques</td></tr><tr><td>3</td><td>Connecté</td><td>Le système doit pouvoir communiquer de multiples façons avec l’extérieur et à l’intérieur même du système</td></tr><tr><td>4</td><td>Accès</td><td>Le système doit être très accessible, dans les milieux à risque, quasiment déconnectés</td></tr><tr><td>20</td><td>Maillage wifi</td><td>Les terminaux doivent être capable de communiquer entre eux jusqu’à la station de base</td></tr><tr><td>2</td><td>Stockage</td><td>Le doit pouvoir stocker des informations</td></tr><tr><td>18</td><td>Batterie alternative en cas de coupure de d’électricité pour les éléments mobiles du système</td><td></td></tr><tr><td>16</td><td>Antenne Radio</td><td>Le système doit être équipé</td></tr><tr><td>15</td><td>Antenne GPS</td><td>Le système doit en être équipé</td></tr><tr><td>14</td><td>Antenne GSM</td><td>Le système doit en être équipé</td></tr><tr><td>13</td><td>Antenne Wifi</td><td>Le système doit en être équipé</td></tr><tr><td>17</td><td>Antennes</td><td>Le système doit en être équipé</td></tr><tr><td>12</td><td>Alimentation</td><td>Le système à besoin d’électricité pour fonctionner</td></tr><tr><td>11</td><td>Mémoire</td><td>Le système doit disposer d’une mémoire pour assurer le stockage de données en vue son utilisation ultérieure</td></tr><tr><td>8</td><td>Renseignable</td><td>Pour s’adapter et être polyvalent, le système doit pouvoir obtenir les informations d’autres systèmes extérieurs et acteurs extérieurs</td></tr><tr><td>7</td><td>Traduit</td><td>Le système doit être utilisé par le plus grand nombre, et vu le nombre limité de connaissances linguistiques des potentiels utilisateurs, il faut que les informations sur le systèmes puissent être traduites</td></tr><tr><td>19</td><td>Interrogeable</td><td>Le système doit être facilement consultable depuis l’intérieur et l’extérieur</td></tr><tr><td>1</td><td>Ouvert</td><td>Le système doit pouvoir s’adapter à d’autres modules complémentaires et à des systèmes déjà présents dans les zones où il y a des actions humanitaires</td></tr></tbody></table>
+
+
+
+                <h4 id="iv-les-diagrammes-de-cas"><a href="#iv--les-diagrammes-de-cas"><span class="octicon octicon-link"></span></a>IV- Les diagrammes de cas</h4>
+
+                <p><strong>Haut niveau</strong></p>
+
+                <p><img src="images/diagrammes/sysml/use_case/haut_niveau.png" alt="" title=""></p>
+
+                <p>Voici les cas d’utilisation vu du niveau le plus haut. Nous avons choisi de laisser le raffinement de ces derniers dans la partie 2.</p>
+
+                <p><strong>Accroître l’autonomie</strong></p>
+
+                <p><img src="images/diagrammes/sysml/use_case/autonome.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à raffiner l’exigence Autonomie. Il décrit succinctement la façon dont peut être vu cette exigence. Dans notre cas, un technicien peut avoir à démarrer un groupe  ́électrogène si une panne de courant se produit afin que le serveur soit de nouveau opérationnel</p>
+
+                <p><strong>Connecter</strong></p>
+
+                <p><img src="images/diagrammes/sysml/use_case/connecter.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à raffiner l’exigence Connecté. Il décrit succinctement la façon dont peut être vu cette exigence. Dans notre cas, un technicien peut avoir à câbler un serveur afin qu’il soit accessible sur un réseau à partir de divers terminaux, et un utilisateur peut activer un réseau (que ce soit réseau wifi, radio ou GPS) en allumant son terminal.</p>
+
+                <p><strong>Interroger</strong></p>
+
+                <p><img src="images/diagrammes/sysml/use_case/interroger.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à raffiner l’exigence Interrogeable. Il décrit succinctement la façon dont peut être vu cette exigence. Dans notre cas, un utilisateur doit pouvoir effectuer une recherche ou bien consulter des données sur un serveur à partir d’un terminal.</p>
+
+                <p><strong>Renseigner</strong></p>
+
+                <p><img src="images/diagrammes/sysml/use_case/renseigner.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à raffiner l’exigence Renseignable. Il décrit succinctement la façon dont peut être vu cette exigence. Dans notre cas, un utilisateur privilégie doit pouvoir saisir des données qui seront ajoutées dans la base de données du serveur du système. Un transfert de données peut avoir lieu entre le système et un système humanitaire existant.</p>
+
+
+
+                <h4 id="v-les-diagrammes-dactivité"><a href="#v--les-diagrammes-dactivit%C3%A9"><span class="octicon octicon-link"></span></a>V- Les diagrammes d’activité</h4>
+
+                <p>Ces diagrammes n’ont pour objectifs que la description du déroulement d’une action effectuée sur le système par les acteurs extérieurs. Ils reprennent les précédents cas d’utilisation pour une continuité dans le raisonnement.</p>
+
+                <p><strong>Autonome</strong></p>
+
+                <p><img src="images/diagrammes/sysml/activite/autonome.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à décrire l’action : Accroître l’Autonomie, qui peut être vu comme un cas d’utilisation pour le technicien. Si une panne de courant survient, le technicien doit être en mesure de pouvoir  démarrer le groupe électrogène afin de permettre le redémarrage du serveur. Si le groupe électrogène est déjà allume, il ne reste qu’à redémarrer le serveur, si celui ci n’est pas déjà rallume.</p>
+
+                <p><strong>Connecter</strong></p>
+
+                <p><img src="images/diagrammes/sysml/activite/connecter.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à écrire l’action : Connecter le système, qui peut être utile au technicien avec le serveur) comme à l’utilisateur avec le terminal). Le technicien peut avoir à câbler un serveur afin qu’il soit accessible sur un réseau, si le réseau n’est pas déjà câblé. Une fois fait, il allume le serveur afin de permettre au réseau d’être accessible via des terminaux. L’utilisateur lui, peut utiliser des terminaux pour activer un réseau. Pour cela, il doit allumer son terminal. Une fois fait, il peut activer le réseau.</p>
+
+                <p><strong>Interroger</strong></p>
+
+                <p><img src="images/diagrammes/sysml/activite/interroger.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à décrire l’action : Interroger le système, elle peut être effectuée par n’importe quel utilisateur. Les droits d’accès sont trait ́es dans la partie 2. Si son terminal est éteint, l’utilisateur doit l’allumer. Ensuite, il peut soit effectuer une recherche, soit consulter les données. Sa demande peut également être rejetée.</p>
+
+                <p><strong>Renseigner</strong></p>
+
+                <p><img src="images/diagrammes/sysml/activite/renseigner.png" alt="" title=""></p>
+
+                <p>Ce diagramme de cas sert à décrire l’action : Renseigner le système, elle peut être effectuée par un utilisateur privilégié. Les droits d’accès sont trait ́es dans la partie 2. L’utilisateur peut ajouter des données qui seront stockées sur le serveur. Pour cela, le serveur doit être allume. Ensuite, l’utilisateur peut saisir les données qui devront être enregistrées.</p>
+
+
+
+                <h4 id="vi-les-diagrammes-de-séquences"><a href="#vi--les-diagrammes-de-s%C3%A9quences"><span class="octicon octicon-link"></span></a>VI- Les diagrammes de séquences</h4>
+
+                <p>Les diagrammes suivants nous permettrons de mettre en exergue une description chronologique desinteractions entre le système et les acteurs. Ils ne couvrent pas l’ensemble des interactions et sont en liens  avec les diagrammes précédents afin de maintenir une traçabilité. Aussi nous avons associe à ces diagrammes une vue dite boîte noire afin de collecter les différents messages transmis entre le système et les acteurs</p>
+
+                <p><strong>Autonomie</strong></p>
+
+                <p><img src="images/diagrammes/sysml/sequence/autonome.png" alt="" title=""><img src="images/diagrammes/sysml/sequence/autonome_boite_noire.png" alt="" title=""></p>
+
+                <p>Ces diagrammes correspondent au cas d’utilisation Autonomie. Ici, nous exprimons le fait que le système, doit pouvoir fonctionner continuellement, il est prévu qu’un technicien puisse mettre en marche un groupe électrogène en cas de coupure d’électricité par exemple, pour fournir l’électricité nécessaire aux différents serveurs ; afin d’assurer une pérennité des différents services</p>
+
+                <p><strong>Interroger</strong></p>
+
+                <p><img src="images/diagrammes/sysml/sequence/interroger.png" alt="" title=""><img src="images/diagrammes/sysml/sequence/interroger_boite_noire.png" alt="" title=""></p>
+
+                <p>Ces diagrammes correspondent au cas d’utilisation Interroger. Ils expriment l’interrogation d’un serveur depuis une machine terminale (utilisateur lambda ). En effet un utilisateur pour pouvoir interroger un serveur doit au préalable mettre sous-tension son terminal, ensuite il peut soit faire une consultation concernant une information donnée, soit effectuer une recherche (Rechercher une personne ). Les serveurs doivent en retour pouvoir fournir une réponse à cette interrogation</p>
+
+                <p><strong>Renseigner</strong></p>
+
+                <p><img src="images/diagrammes/sysml/sequence/renseigner.png" alt="" title=""><img src="images/diagrammes/sysml/sequence/renseigner_boite_noire.png" alt="" title=""></p>
+
+                <p>Ces diagrammes correspondent au cas d’utilisation Renseigner. Ils mettent en exergue, le fait de pouvoir renseigner les différents serveurs qui appartiennent à notre système. Il faut au préalable que ceux- ci soient mis en marche, ensuite il est possible d’effectuer une saisie de données depuis des machines terminales spécifiques, afin de remplir les tables des bases de données existantes sur les différents serveurs.</p>
+
+
+
+                <h4 id="vii-conclusion"><a href="#17--conclusion"><span class="octicon octicon-link"></span></a>VII- Conclusion</h4>
+
+                <p>Nous arrivons au terme de la modélisation SysML. Nous avons éclairci les points suivants: <br>
+                    — Définition du système et de son contexte <br>
+                    — Élaboration du cahiers des charges à l’aide du diagramme d’exigences <br>
+                    — Définition d’un certain nombre de cas d’utilisation en lien avec le cahier des charges <br>
+                    — Description du déroulement de certaines actions avec le diagramme d’activité</p>
+
+                <p>Il s’agit maintenant de changer de prisme de conception. Nous allons décrire la partie la plus importante de cette documentation à travers le prisme logiciel cette fois.</p>
+
+                <hr>
+
+
+
+                <h2 id="partie-ii-approche-de-modélisation-logicielle-uml"><a href="#partie-ii--approche-de-mod%C3%A9lisation-logicielle"><span class="octicon octicon-link"></span></a>Partie II : Approche de modélisation logicielle (UML)</h2>
+
+                <hr>
+
+
+
+                <h4 id="i-introduction-1"><a href="#i-introduction"><span class="octicon octicon-link"></span></a>I-Introduction</h4>
+
+                <p>L’objectif de cette partie de la modélisation, consiste à proposer un modèle de notre système d’information vu d’un prisme logiciel cette fois ci. En effet, l’utilisation de UML pour modéliser ce système apparaît comme une évidence dans la mesure ou la modélisation UML permet d’obtenir une modélisation de très haut niveau indépendante des langages et des environnements, aussi d’exprimer dans un seul modèle tous les aspects statiques, dynamiques, spécifications, etc.. Ce qui constitue notre principal objectif. Pour ce faire, nous allons tout d’abord procéder à une définition succincte du cahier de charges, puis nous exprimerons par la suite les aspects Fonctionnel (diagrammes de Cas d’Utilisation), Statique (diagrammes de Classes), Dynamique (diagrammes d’ Etats, diagrammes activistes), pour chaque exigence exprimée dans le dit cahier de charges.</p>
+
+
+
+                <h4 id="ii-définition-du-cahier-des-charges"><a href="#ii-d%C3%A9finition-du-cahier-des-charges"><span class="octicon octicon-link"></span></a>II-Définition du cahier des charges</h4>
+
+                <p>Voici une liste de phrases simples visant à définir les besoins fonctionnels de notre application. Nous essaierons de satisfaire chacune d’elle et de détailler leur satisfaction dans les parties suivantes:</p>
+
+                <ol>
+                    <li>Permettre aux proches d’un sinistre de pouvoir consulter les informations de celui-ci.</li>
+                    <li>Permettre à une ONG d’organiser et gérer une campagne de vaccination.</li>
+                    <li>Permettre aux ONG de se coordonner.</li>
+                    <li>Permettre au personnel sur place de gérer les stocks dans les infrastructures.</li>
+                    <li>Permettre l’information pertinente des populations.</li>
+                </ol>
+
+                <p>Pour chacune des exigences précédentes nous présenterons les diagrammes selon la démarche suivante :</p>
+
+                <p>Cas → Classe → Etat → Activité.</p>
+
+
+
+                <h4 id="iii-réponses-aux-exigences"><a href="#iii-r%C3%A9ponses-aux-exigences"><span class="octicon octicon-link"></span></a>III-Réponses aux exigences</h4>
+
+
+
+                <h5 id="iii1-permettre-aux-proches-dun-sinistré-de-pouvoir-consulter-les-informations-de-celui-ci"><a href="#iii1--permettre-aux-proches-dun-sinistr%C3%A9-de-pouvoir-consulter-les-informations-de-celui-ci"><span class="octicon octicon-link"></span></a>III.1- Permettre aux proches d’un sinistré de pouvoir consulter les informations de celui-ci</h5>
+
+                <p>Les proches d’un sinistre peuvent consulter ses informations. Il y a deux notions à éclaircir : la première, appelons la notion information, est le fait qu’un sinistre doit effectivement avoir des informations qui <br>
+                    puissent aider ses proches à le retrouver ; la deuxième, appelons la notion proche, implique que des relations sociales entre les sinistres doivent être prises en charge au sein de notre application. Nous allons éclaircir ces deux notions à l’aide de diagrammes UML dans les parties suivantes.</p>
+
+                <p><strong>Éclaircissement des notions</strong></p>
+
+                <p><img src="images/diagrammes/uml/exigence_1/cas_information_refugie.png" alt="" title=""></p>
+
+                <p>Nous n’avons pas représente l’authentification par soucis de clarté. Il ne faut pas que n’importe quel utilisateur sache ou se trouve un réfugie. Par exemple, lors d’une guerre civile, si un sinistre est recherche par un chef de guerre et que ce sinistre est recense dans un camp de réfugie, il ne doit pas pouvoir le localiser. Seul les personnes autorisées par le réfugie peuvent accéder aux informations.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_1/class_part_recherche.png" alt="" title=""> <br>
+                    <img src="images/diagrammes/uml/exigence_1/classe_exigence_1.png" alt="" title=""></p>
+
+                <p>Les points importants à noter ici sont les relations et la visibilité d’une fiche de liaison. Une relation signifie que deux sinistres peuvent être qualifies de ”proches”. La visibilité d’une fiche de liaison permet de protéger ses informations et de ne les partager qu’avec un <br>
+                    groupe restreint.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_1/etat_gerer_mouvement_refugie.png" alt="" title=""></p>
+
+                <p>Nous considérons ici que la gestion des mouvement des réfugies s’effectue dans un camp de réfugies donne. Lorsqu’un agent qui travaille dans ce camp désire gérer le mouvement d’un réfugié par rapport à ce camp, il commence par lancer l’outil de gestion de mouvements de réfugiés. Il doit ensuite entrer les informations nécessaires à son authentification (Identifiant agent, mot de passe, etc …). Pour des raisons de sécurité, tout comme pour le diagramme d’états ”Gestion Campagne”, s’il survient trois erreurs consécutives d’authentification, le compte utilisateur est bloque et on fait appel <br>
+                    à un administrateur qui renvoie de nouvelles informations d’authentification pour cet agent. S’il y a eu moins de trois erreurs et que l’identifiant et le mot de passe sont corrects, alors l’agent peut accéder à l’interface de gestion de mouvements sur lequel il peut soit modifier des mouvements déjà existants, soit enregistrer un nouveau mouvement.</p>
+
+                <ul>
+                    <li>Si l’agent effectue un clic sur le bouton ”enregistrer” l’outil passe à l’ ́état ”enregistrement mouvement”. L’utilisateur peut donc dans cet état vérifier si il existe déjà des informations relatives au réfugie concerne, si oui il récupère <br>
+                        ces informations , sinon il effectue une nouvelle saisie des informations suivantes : Identité(nom, prénom, date de <br>
+                        naissance, sexe, etc), type de mouvement (flux entrant ou sortant du camp), date et lieu de l’enregistrement, motif, <br>
+                        etc … Si l’agent valide (clic bouton valider) les informations saisies et que ces données sont valides, l’outil entre dans l’état ”envoi des données” dans lequel il effectue un transfert de ces données vers un serveur, puis il se met en attente d’un accusé de réception. Quand l’accusé de réception est reçu, l’outil passe à l’état ”fin enregistrement” dans lequel il affiche une confirmation de l’enregistrement des données. Apres quoi, l’agent peut soit demander d’effectuer un nouvel enregistrement et l’outil retournera à l’état ”enregistrer mouvement”, soit faire une demande de modification et passer à l’ Etat modification mouvement, soit effectuer une déconnexion ce qui amènera l’outil à retourner à l’état authentification”.</li>
+                </ul>
+
+                <p>** Si l’agent effectue un clic sur le bouton ”modifier” l’outil passe à l’état ”modification mouvement”. L’utilisateur peut alors choisir une ligne parmi tous les enregistrements existants, sur laquelle il peut faire des modifications. De même, si ces modifications sont validées par l’agent et que les données sont valides, l’outil entre dans l’état ”envoi des données” et il s’en suit les mêmes actions exprimées dans le paragraphe précédent.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_1/act_gerer_mouvement.png" alt="" title=""></p>
+
+                <p>Ici, le personnel d’un camp gère les mouvements des sinistres présents dans le camp. Pour cela, le personnel doit d’abord se connecter. Ensuite, si le réfugié n’existe pas dans le camp, un profil lui est créé, sinon, le personnel cherche à obtenir les informations le concernant. Si le réfugié sinistre n’a effectue aucun déplacement, alors le personnel devra saisir le type, le motif, la date et le lieu du mouvement. Si un mouvement a déjà été effectue, alors le personnel modifiera ces informations. Une fois les données saisies, le mouvement est enregistre pour le sinistre.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_1/act_recherche_refugie.png" alt="" title=""></p>
+
+                <p>Dans le cas présent, un utilisateur veut consulter les informations d’un réfugié. Pour cela il devra effectuer une recherche contenant le nom, l’age et la ville d’origine du réfugié. Une fois les informations saisies, la recherche s’effectue et lui donnera la liste des réfugiés correspondants.</p>
+
+
+
+                <h5 id="iii2-permettre-à-une-ong-dorganiser-et-gérer-un-campagne-de-vaccination"><a href="#iii2--permettre-%C3%A0-une-ong-dorganiser-et-g%C3%A9rer-un-campagne-de-vaccination"><span class="octicon octicon-link"></span></a>III.2- Permettre à une ONG d’organiser et gérer un campagne de vaccination</h5>
+
+                <p>Afin de rendre le travail sur le terrain efficace, il faut qu’il soit organise. Pour cela, il faut que dans notre application, une ONG puisse planifier ses stratégies de soutiens à travers différentes campagnes. Il a deux notions à éclaircir : la première, appelons la notion ONG, est le fait de représenter un utilisateur particulier dans notre application ; la deuxième, appelons la notion campagne, est le fait de représenter une campagne organisée par une ONG.</p>
+
+                <p><em>* Éclaircissement des notions*</em></p>
+
+                <p><img src="images/diagrammes/uml/exigence_2/cas_exigence_2.png" alt="" title=""></p>
+
+
+
+                <h5 id="iii3-permettre-aux-ong-de-se-coordonner"><a href="#iii3--permettre-aux-ong-de-se-coordonner"><span class="octicon octicon-link"></span></a>III.3- Permettre aux ONG de se coordonner</h5>
+
+                <p>Tous les comptes qualifies de professionnels ont accès à certaines données sensibles. Ces données peuvent permettre de planifier des campagnes, réapprovisionner des stocks..</p>
+
+                <p><img src="images/diagrammes/uml/exigence_2/cas_gerer_campagne.png" alt="" title=""><img src="images/diagrammes/uml/exigence_2/classe_exigence_2.png" alt="" title=""></p>
+
+                <p>Les catastrophes peuvent être attachées à d’autres classes selon les besoins, elles peuvent être par exemple reliées à un lieu, une durée,… par soucis de simplification ces classes n’apparaissent pas ici. Il en est de même pour les campagnes.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_2/etat_gestion_campagne.png" alt="" title=""></p>
+
+                <p>Lorsqu’une ONG désire gérer une campagne, une personne membre de cette ONG doit entrer l’identifiant et le mot de passe correspondants à cette ONG. Pour des raisons de sécurité, s’il y a eu trois erreurs consécutives, lors de la quatrième fois que l’utilisateur valide l’identifiant et le mot de passe qu’il a entres, le compte est bloque et il ne sera débloqué que lorsque l’administrateur l’aura fait et aura renvoyé un nouvel identifiant avec un nouveau mot de passe à l’ONG. S’il y a eu moins de trois erreurs et que l’identifiant et le mot de passe sont corrects, alors l’utilisateur membre de l’ONG choisit s’il désire créer une nouvelle campagne ou s’il désire en modifier une déjà créée. S’il souhaite créer une nouvelle campagne, alors il doit choisir un sujet puis le valider, il doit ensuite saisir une zone cible et la valider et pour finir, il doit choisir la population cible et valider à nouveau. La campagne sera alors créée. Si le membre de l’ONG désire modifier une campagne déjà créée, il doit alors entrer le sujet, la zone cible et la population cible de la campagne à modifier et valider ces informations. Si aucune campagne créée par l’ONG identifiée ne correspond aux données entrées par l’utilisateur, alors ce dernier est invite à entrer de nouveau les données correspondantes à la campagne à modifier. Si une campagne créée par l’ONG identifiée correspond aux données entrées, alors le membre de l’ONG doit saisir un nouveau sujet et le valider, une nouvelle zone cible et la valider et il doit entrer une nouvelle population cible et la valider  ́également. La campagne sera alors modifiée.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_2/act_gerer_campagne.png" alt="" title=""></p>
+
+                <p>On considère dans notre cas qu’une ONG veut gérer une campagne. Pour cela elle doit d’abord s’authentifier. Si les informations d’authentification sont erronées, alors l’ONG doit retenter de se connecter avec des informations valides. Une fois la connexion réussie et la demande de gérer une campagne effectuée, si les informations sur la campagne n’ont pas  ́et ́e saisies, l’ONG doit saisir le type, le sujet, la zone cible et la population cible de la campagne. Si l’une de ces informations est erronée, elle devra être ressaisie jusqu’à ce qu’elle soit valide. Si les données de la campagne ont déjà été saisies par le passe, l’ONG peut les modifier (si les informations modifiées ne sont pas valides, l’ONG devra les ressaisir jusqu’à ce qu’elles soient correctes). Une fois toutes les informations saisies, elles seront enregistrées pour la campagne en cours.</p>
+
+
+
+                <h5 id="iii-3-permettre-aux-ong-de-se-coordonner"><a href="#iii-3-permettre-aux-ong-de-se-coordonner"><span class="octicon octicon-link"></span></a>III-3 Permettre aux ONG de se coordonner</h5>
+
+                <p>Cette exigence est satisfaite implicitement par l’exigence précédente. Il suffit que les responsables des différentes ONG consultent les informations relatives aux autres ONG et qu’ils choisissent les mesures à prendre. Cela relève plus de décisions politiques au sens large et cela nous concerne peu ou serai assez complexe à mettre en place (mécanismes de rappel de campagne, algorithmes de suggestion de campagne, etc…)</p>
+
+
+
+                <h5 id="iii-4-permettre-au-personnel-sur-place-de-gérer-les-stocks-dans-les-infrastructures"><a href="#iii-4-permettre-au-personnel-sur-place-de-g%C3%A9rer-les-stocks-dans-les-infrastructures"><span class="octicon octicon-link"></span></a>III-4 Permettre au personnel sur place de gérer les stocks dans les infrastructures</h5>
+
+                <p>La gestion de stock implique que chaque infrastructure doit être administrée par une personne ou un groupe de personnes. On doit pouvoir effectuer des commandes en cas de ruptures de stock. Il y a deux notions à éclaircir : la première, appelons la gestion, est la représentation d’un utilisateur particulier charge de la gestion des stock dans une infrastructure ; la deuxième, appelons la stock, est la représentation d’un stock de produits.</p>
+
+                <p><strong>Éclaircissement des notions</strong></p>
+
+                <p><img src="images/diagrammes/uml/exigence_4/cas_exigence_4.png" alt="" title=""></p>
+
+                <p>Un compte d’administration d’une infrastructure doit fournir une possibilité de gestion de stock. C’est un type de compte professionnel par infrastructure.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_4/classe_exigence_4.png" alt="" title=""></p>
+
+                <p>Il existe une multitude de patrons UML pour la gestion de stock mais par souci de simplicité nous en avons conçu un. Pour  ́éviter de stocker plusieurs fois les détails d’un produit nous avons décide de faire une classe de détail dédiée. Le compte d’administration peut être représente par un compte d’une personne morale dans un camp de réfugies par exemple et il administrera tout le camp de réfugies.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_4/etat_gestion_stock.png" alt="" title=""></p>
+
+                <p>afin de gérer le stock, on vérifie le niveau de l’inventaire. S’il y a encore assez de produits en stock, on ne commande rien alors que si le nombre de produits restant est faible, on recherche le produit à commander et une fois trouve, on le commande.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_4/act_gerer_stock.png" alt="" title=""></p>
+
+                <p>Pour gérer un stock, un professionnel, qui est soit une personne membre d’une ONG, soit un personnel d’un camp ou soit un employé de sante doit tout d’abord s’authentifier. Si l’identifiant entré et le mot de passe entre correspondent à l’identifiant et au mot de passe d’un professionnel, alors le professionnel peut consulter le stock, sinon il est invite à entrer de nouveau un identifiant et un mot de passe. <br>
+                    Si le stock est insuffisant, le professionnel connecte peut alors passer une commande du(des) produit(s) dont le stock est insuffisant. Si le stock restant est suffisant, le professionnel ne passe pas de commande.</p>
+
+
+
+                <h5 id="iii-5-permettre-la-diffusion-de-messages-pertinents-aux-populations"><a href="#iii-5-permettre-la-diffusion-de-messages-pertinents-aux-populations"><span class="octicon octicon-link"></span></a>III-5 Permettre la diffusion de messages pertinents aux populations</h5>
+
+                <p>Les sinistres peuvent être cibles de messages aux objectifs différents. Ils sont cibles par des organismes pour des campagnes. Il y a une notion à éclaircir : notion information</p>
+
+                <p><strong>Éclaircissement des notions</strong></p>
+
+                <p><img src="images/diagrammes/uml/exigence_5/cas_exigence_5.png" alt="" title=""> <br>
+                    <img src="images/diagrammes/uml/exigence_5/classe_exigence_5.png" alt="" title=""></p>
+
+                <p>Un sinistre est cible par une campagne et reçoit des messages la concernant. Ces messages sont choisis et envoyés par un responsable au sein d’une ONG. C’est une façon de contribuer à l’information pertinente des populations.</p>
+
+                <p><img src="images/diagrammes/uml/exigence_5/etat_diffusion_information.png" alt="" title=""> </p>
+
+                <p>A chaque nouvelle information, celle-ci est vérifiée afin de savoir si elle est importante ou non. Si elle ne l’est pas, elle ne sera pas diffusée et si elle est importante, elle sera diffusée via réseau GSM, wi-fi et radio. Cependant un incident radio, GSM et/ou wi-fi peut avoir lieu. Dans ce cas, si un incident lors de la diffusion radio à lieu par exemple, le système continuera d’essayer de diffuser cette information via radio jusqu’à ce qu’elle soit bien envoyée, et il en est de même s’il se produit un incident de diffusion via wi-fi ou via GSM</p>
+
+                <p><img src="images/diagrammes/uml/exigence_5/act_diffuser_information_act.png" alt="" title=""></p>
+
+                <p>Dans notre cas, une ONG veut diffuser une information. L’information est d’abord triée, afin de déterminer son importance. Si elle n’est pas importante, elle n’est pas diffusée, sinon, elle sera diffusée.</p>
+
+
+
+                <h4 id="iv-diagrammes-complémentaires"><a href="#iv-diagrammes-compl%C3%A9mentaires"><span class="octicon octicon-link"></span></a>IV-Diagrammes complémentaires</h4>
+
+
+
+                <h5 id="iv-1-diagrammes-de-cas"><a href="#iv-1-diagrammes-de-cas"><span class="octicon octicon-link"></span></a>IV-1 Diagrammes de Cas</h5>
+
+                <p><img src="images/diagrammes/uml/complementaire/cas_general.png" alt="" title=""></p>
+
+                <p>Voici le diagramme de cas complet du système, les commentaires ont été place directement sur le diagramme car ils se rapportent à certaines parties du diagramme.</p>
+
+
+
+                <h5 id="iv-2-diagrammes-de-classe"><a href="#iv-2-diagrammes-de-classe"><span class="octicon octicon-link"></span></a>IV-2 Diagrammes de Classe</h5>
+
+                <p><img src="images/diagrammes/uml/complementaire/classe_general.png" alt="" title=""></p>
+
+                <p>Voici le diagramme de classe complet du système. Bien sûr, on pourrait ajouter des éléments comme la gestion des droits d’accès mais cela alourdirai considérablement le diagramme. On retrouve l’ensemble des petits diagrammes de classe utilises dans les parties précédent</p>
+
+
+
+                <h5 id="iv-3-diagrammes-detat"><a href="#iv-3-diagrammes-detat"><span class="octicon octicon-link"></span></a>IV-3 Diagrammes d’Etat</h5>
+
+                <p><img src="images/diagrammes/uml/complementaire/etat_Recherche_personne.png" alt="" title=""></p>
+
+                <p>Lorsqu’un utilisateur désiré rechercher un réfugié, il doit entrer dans un terminal (mobile ou non) le nom, le prénom et la date de naissance de la personne qu’il désire trouver. L’utilisateur peut envoyer la requête au serveur uniquement si tous les champs requis sont bien tous remplis (nom, prénom et date de naissance dans notre cas). <br>
+                    Une fois la requête envoyée au serveur, le serveur vérifie dans la base de données contenant les camps ainsi que les réfugies qui s’y trouvent si la personne recherchée se trouve dans l’un des camps. Si c’est le cas, le serveur envoie les informations relatives au camp où                       se trouve le réfugie recherche à l’utilisateur, sinon le serveur signale à l’utilisateur qu’aucune personne n’a été trouvée et le renvoie sur la page de saisie d’informations afin de chercher une personne à nouveau s’il le désire. Cependant, un incident réseau peut avoir lieu lors de la validation des informations par l’utilisateur ou lors de la réponse du serveur.</p>
+
+
+
+                <h5 id="iv4-diagrammes-dactivité"><a href="#iv4-diagrammes-dactivit%C3%A9"><span class="octicon octicon-link"></span></a>IV.4 Diagrammes d’activité</h5>
+
+                <p><img src="images/diagrammes/uml/complementaire/Creer_compte_act.png" alt="" title=""></p>
+
+                <p>On considéré ici qu’un sinistre (ie. personne qui subit les conséquences liées a une catastrophe et qui ne se trouve pas forcement dans un camp de réfugiés) peut créer un compte depuis un terminal : Sur un terminal, une fois l’application de création de compte lancée, l’utilisateur peut saisir des informations le concernant <br>
+                    via un formulaire d’inscription . si les informations saisies sont déjà utilises ou erronées l’outil d’inscription redemande une saisie des informations par un nouveau formulaire. Si les informations sont valides alors elles seront enregistrées sur le serveur sous la forme d’un nouveau compte afin de permettre une connexion ultérieure.</p>
+
+                <p><img src="images/diagrammes/uml/complementaire/Gerer_compte_act.png" alt="" title=""></p>
+
+                <p>On considère ici qu’un sinistré veut modifier les informations de son compte depuis un terminal. Pour cela, il doit d’abord se connecter. Si les informations saisies sont correctes, alors la connexion s’effectue, sinon, il devra ressaisir ses identifiants valides. Une fois connecté, il peut modifier les informations le concernant, dans la mesure où celles-ci restent correctes (sinon il devra en ressaisir des correctes). Une fois les modifications  apportées, elles seront enregistrées sur le serveur pour le compte du sinistré</p>
+
+                <p><img src="images/diagrammes/uml/complementaire/Recherche_Lieu_act.png" alt="" title=""></p>
+
+                <p>Dans notre cas, un sinistre veut rechercher un camp. Pour cela, il doit saisir un lieu via son terminal. Si le lieu n’existe pas, il devra en retaper un valide. Si il est correct, la recherche s’effectue et lui donnera la liste des camps à proximité du lieu.</p>
+
+
+
+                <h4 id="v-conclusion"><a href="#v-conclusion"><span class="octicon octicon-link"></span></a>V-Conclusion</h4>
+
+                <p>Nous arrivons au terme de la modélisation UML. Nous avons éclairci les points suivants: <br>
+                    — Définition du cahiers des charges. <br>
+                    — Réponse aux exigences grâce à certains cas d’utilisation en lien avec le cahier des charges. <br>
+                    — Description précise et concise du l’état du système via des diagrammes de classes. <br>
+                    — Description du déroulement de certaines actions avec les diagrammes d’activités. <br>
+                    — Planification des interactions du système avec l’extérieur par le diagramme de séquence.</p>
+
+                <p>UML est un support pour les développeurs, la compréhension du problème leur ai facilitée et ils peuvent débuter la programmation directement au contraire du SysML qui est plus adapte d’un point de vue ingénierie.</p>
+
+                <p> <br>
+
+
+
+
             </section>
-        </header>
-    </div>
+        </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>[TOC]</p>
+        <!-- FOOTER  -->
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+                <p class="copyright">Humanitarian Modeling maintained by <a href="https://github.com/NephtysOrg">NephtysOrg</a></p>
+                <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+            </footer>
+        </div>
 
-<hr>
 
-<h2>
-<a id="partie-i--approche-de-modélisation-système-sysml" class="anchor" href="#partie-i--approche-de-mod%C3%A9lisation-syst%C3%A8me-sysml" aria-hidden="true"><span class="octicon octicon-link"></span></a>Partie I : Approche de modélisation Système (SysML)</h2>
 
-<hr>
-
-<h4>
-<a id="i--introduction" class="anchor" href="#i--introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>I- Introduction</h4>
-
-<p>Cette partie à pour objectif de fournir une description systémique répondant à la problématique qui est de pouvoir proposer une solution informatique afin d'améliorer la logistique sur le terrain, d'actions humanitaires.
-Nous allons d’abord introduire le système et son contexte dans la partie Définition du contexte du système afin de fixer les idées et de permettre la compréhension de la suite de ce document. Nous essaierons de répondre au maximum aux exigences imposées et induites dans l’appel d’offre dans la partie Diagramme
-d’exigences. Nous détaillerons ensuite quelques exigences à l’aide de diagrammes de Cas, d’Activité, de Séquence dans une optique de clarification.
-La partie sysML n’est pas exhaustive dans le sens ou un très grand nombre de diagrammes peuvent être ajoutés pour compléter cette documentation. Nous avons pertinemment sélectionné les diagrammes afin de fournir une vue simple et compréhensible. Notre démarche est guidée par l’exemple SysML de l’OMG suivant : [<a href="http://www.omg.org/ocsmp/HSUV.pdf(#http://www.omg.org/ocsmp/HSUV.pdf)">http://www.omg.org/ocsmp/HSUV.pdf(#http://www.omg.org/ocsmp/HSUV.pdf)</a><i></i></p>
-
-<h4>
-<a id="ii--définition-du-contexte-du-système" class="anchor" href="#ii--d%C3%A9finition-du-contexte-du-syst%C3%A8me" aria-hidden="true"><span class="octicon octicon-link"></span></a>II- Définition du contexte du système</h4>
-
-<h5>
-<a id="ii1--vue-quasi-réelle-du-système" class="anchor" href="#ii1--vue-quasi-r%C3%A9elle-du-syst%C3%A8me" aria-hidden="true"><span class="octicon octicon-link"></span></a>II.1- Vue quasi-réelle du système</h5>
-
-<p>Les images suivantes représentent le système dans son environnement et les acteurs interagissants sur le système.</p>
-
-<p>[GitHub Logo]()</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><i></i> Description des images dans II.2</p>
-
-<h5>
-<a id="ii2--diagramme-de-contexte" class="anchor" href="#ii2--diagramme-de-contexte" aria-hidden="true"><span class="octicon octicon-link"></span></a>II.2- Diagramme de contexte</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><i></i>
-Le système est composé d’un ensemble de terminaux (mobiles ou non) et d’un ensemble de serveurs. Les
-terminaux et les serveurs forment deux sous systèmes qui interagissent entre eux.
-Nous avons trouvé judicieux de réutiliser les systèmes déjà présents afin de rentabiliser les données et de
-collaborer avec le plus grand nombre. C’est pour cela que les serveurs du système doivent être capable de
-réutiliser les données des serveurs d’un organisme déjà présent.
-Par exemple, si un agent sur place travaille depuis 20 ans sur un projet et que toutes ses données sont stockées
-sur les serveurs d’une ONG, il parait aberrent de lui demander de re-saisir les données en s’adaptant
-à notre
-application. Le système ainsi développé n’aurait aucun succès parmi les personnes déjà sur place.
-Un système dans un tel milieu fait face
-a des contraintes environnementales et a besoin de connectivités
-adaptables.</p>
-
-<h4>
-<a id="iii--les-diagrammes-dexigences" class="anchor" href="#iii--les-diagrammes-dexigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III- Les diagrammes d'exigences</h4>
-
-<p>Pour répondre au mieux au vaste et libre sujet, nous avons sélectionné des exigences génériques que nous
-raffinons ensuite pour arriver `
-a un niveau de détails suffisant. Certaines exigences significatives sont ensuite
-détaillées à l’aide d’autres diagrammes pour permettre leur compréhension et/ou leur traçabilité. Nous avons
-essaye le plus possible de nous détacher du prisme logiciel durant cette phase</p>
-
-<h5>
-<a id="iii1--hiérarchie-dexigences" class="anchor" href="#iii1--hi%C3%A9rarchie-dexigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.1- Hiérarchie d'exigences</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Voici une liste non exhaustive des exigences du système. Elles ont  ́et ́e choisies pour leur aspect fondamental
-et générique. La documentation peut être directement trouvée sur le diagramme.</p>
-
-<h5>
-<a id="iii2--raffinement-dexigences" class="anchor" href="#iii2--raffinement-dexigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.2- Raffinement d'exigences</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Voici un raffinement des feuilles de l’arbre de la partie III.1. La documentation peut etre directement trouvee
-sur le diagramme</p>
-
-<h5>
-<a id="iii3--détails-dexigences" class="anchor" href="#iii3--d%C3%A9tails-dexigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.3- Détails d'exigences</h5>
-
-<p>Les exigences nécessitants un travail de réflexion particulier sont détaillées dans cette partie `
-a l’aide de
-diagrammes de Cas 1 , Séquence et Activité. Ces diagrammes seront présentes dans leur partie respective. Ici
-nous présentons seulement la fa ̧con dont les exigences sont détaillées.
-Note 1: Le lien "refine" est représente par une note dans notre AGL (Astah sysml)</p>
-
-<h5>
-<a id="détail-de-autonome" class="anchor" href="#d%C3%A9tail-de-autonome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Détail de Autonome</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<h5>
-<a id="détail-de-connecté" class="anchor" href="#d%C3%A9tail-de-connect%C3%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Détail de connecté</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<h5>
-<a id="détail-de-renseignable" class="anchor" href="#d%C3%A9tail-de-renseignable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Détail de Renseignable</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<h5>
-<a id="détail-de-interrogeable" class="anchor" href="#d%C3%A9tail-de-interrogeable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Détail de Interrogeable</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<h5>
-<a id="iii4--table-dexigences" class="anchor" href="#iii4--table-dexigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.4- Table d'exigences</h5>
-
-<p>Toutes les exigences et leur description sont exprimées dans le tableau suivant:</p>
-
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Text</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5</td>
-<td>Résistance</td>
-<td>Le système doit tenir face à des températures variables, des milieux humides et aussi à d’éventuels chocs</td>
-</tr>
-<tr>
-<td>10</td>
-<td>Autonomie</td>
-<td>En cas de problème de courant, le système doit pouvoir continuer à assurer un fonctionnement minimal ou au moins ne pas perdre ses données</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Durable</td>
-<td>Le système doit pouvoir être mis en place pour une durée particulièrement longue</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Portabilité</td>
-<td>Le système doit pouvoir être positionné dans des zones accidentés et critiques</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Connecté</td>
-<td>Le système doit pouvoir communiquer de multiples façons avec l'extérieur et à l'intérieur même du système</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Accès</td>
-<td>Le système doit être très accessible, dans les milieux à risque, quasiment déconnectés</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Maillage wifi</td>
-<td>Les terminaux doivent être capable de communiquer entre eux jusqu’à la station de base</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Stockage</td>
-<td>Le doit pouvoir stocker des informations</td>
-</tr>
-<tr>
-<td>18</td>
-<td>Batterie alternative en cas de coupure de d’électricité pour les éléments mobiles du système</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>Antenne Radio</td>
-<td>Le système doit être équipé</td>
-</tr>
-<tr>
-<td>15</td>
-<td>Antenne GPS</td>
-<td>Le système doit en être équipé</td>
-</tr>
-<tr>
-<td>14</td>
-<td>Antenne GSM</td>
-<td>Le système doit en être équipé</td>
-</tr>
-<tr>
-<td>13</td>
-<td>Antenne Wifi</td>
-<td>Le système doit en être équipé</td>
-</tr>
-<tr>
-<td>17</td>
-<td>Antennes</td>
-<td>Le système doit en être équipé</td>
-</tr>
-<tr>
-<td>12</td>
-<td>Alimentation</td>
-<td>Le système à besoin d'électricité pour fonctionner</td>
-</tr>
-<tr>
-<td>11</td>
-<td>Mémoire</td>
-<td>Le système doit disposer d'une mémoire pour assurer le stockage de données en vue son utilisation ultérieure</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Renseignable</td>
-<td>Pour s'adapter et être polyvalent, le système doit pouvoir obtenir les informations d'autres systèmes extérieurs et acteurs extérieurs</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Traduit</td>
-<td>Le système doit être utilisé par le plus grand nombre, et vu le nombre limité de connaissances linguistiques des potentiels utilisateurs, il faut que les informations sur le systèmes puissent être traduites</td>
-</tr>
-<tr>
-<td>19</td>
-<td>Interrogeable</td>
-<td>Le système doit être facilement consultable depuis l'intérieur et l'extérieur</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Ouvert</td>
-<td>Le système doit pouvoir s'adapter à d'autres modules complémentaires et à des systèmes déjà présents dans les zones où il y a des actions humanitaires</td>
-</tr>
-</tbody>
-</table>
-
-<h4>
-<a id="iv--les-diagrammes-de-cas" class="anchor" href="#iv--les-diagrammes-de-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV- Les diagrammes de cas</h4>
-
-<p><strong>Haut niveau</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Voici les cas d’utilisation vu du niveau le plus haut. Nous avons choisi de laisser le raffinement de ces derniers
-dans la partie 2.</p>
-
-<p><strong>Accroître l'autonomie</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert `
-a raffiner l’exigence Autonomie. Il décrit succinctement la fa ̧con dont peut être
-vu cette exigence. Dans notre cas, un technicien peut avoir à démarrer un groupe  ́électrogène si une panne
-de courant se produit afin que le serveur soit de nouveau opérationnel</p>
-
-<p><strong>Connecter</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert `
-a raffiner l’exigence Connecté. Il décrit succinctement la fa ̧con dont peut être vu
-cette exigence. Dans notre cas, un technicien peut avoir à câbler un serveur afin qu’il soit accessible sur un
-réseau à partir de divers terminaux, et un utilisateur peut activer un réseau (que ce soit réseau wifi, radio
-ou GPS) en allumant son terminal.</p>
-
-<p><strong>Interroger</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert <code>
-a raffiner l’exigence Interrogeable. Il décrit succinctement la fa ̧con dont peut être
-vu cette exigence. Dans notre cas, un utilisateur doit pouvoir effectuer une recherche ou bien consulter des
-données sur un serveur</code>
-a partir d’un terminal.</p>
-
-<p><strong>Renseigner</strong>
-<img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Ce diagramme de cas sert `
-a raffiner l’exigence Renseignable. Il décrit succinctement la fa ̧con dont peut être
-vu cette exigence. Dans notre cas, un utilisateur privilégie doit pouvoir saisir des données qui seront ajoutées
-dans la base de données du serveur du système. Un transfert de données peut avoir lieu entre le système et
-un système humanitaire existant.</p>
-
-<h4>
-<a id="v--les-diagrammes-dactivité" class="anchor" href="#v--les-diagrammes-dactivit%C3%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>V- Les diagrammes d'activité</h4>
-
-<p>Ces diagrammes n’ont pour objectifs que la description du déroulement d’une action effectuée sur le
-système par les acteurs extérieurs. Ils reprennent les précédents cas d’utilisation pour une continuité dans le
-raisonnement.</p>
-
-<p><strong>Autonome</strong>
-<img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Ce diagramme de cas sert <code>
-a décrire l’action : Accroître l’Autonomie, qui peut être vu comme un cas d’utilisation pour le technicien. Si une panne de courant survient, le technicien doit être en mesure de pouvoir
-démarrer le groupe électrogène afin de permettre le redémarrage du serveur. Si le groupe  ́électrogène est
-déjà allume, il ne reste qu’</code>
-a redémarrer le serveur, si celui ci n’est pas déjà rallume.</p>
-
-<p><strong>Connecter</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert à écrire l’action : Connecter le système, qui peut être utile au technicien avec le
-serveur) comme `
-a l’utilisateur avec le terminal). Le technicien peut avoir à câbler un serveur afin qu’il soit
-accessible sur un réseau, si le réseau n’est pas déjà câblé. Une fois fait, il allume le serveur afin de permettre
-au réseau d’être accessible via des terminaux. L’utilisateur lui, peut utiliser des terminaux pour activer un
-réseau. Pour cela, il doit allumer son terminal. Une fois fait, il peut activer le réseau.</p>
-
-<p><strong>Interroger</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert `
-a décrire l’action : Interroger le système, elle peut être effectuée par n’importe
-quel utilisateur. Les droits d’accès sont trait ́es dans la partie 2. Si son terminal est  ́éteint, l’utilisateur doit
-l’allumer. Ensuite, il peut soit effectuer une recherche, soit consulter les données. Sa demande peut  ́également
-être rejetée.</p>
-
-<p><strong>Renseigner</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ce diagramme de cas sert à décrire l’action : Renseigner le système, elle peut être effectuée par un utilisateur
-privilégié. Les droits d’accès sont trait ́es dans la partie 2. L’utilisateur peut ajouter des données qui seront
-stockées sur le serveur. Pour cela, le serveur doit être allume. Ensuite, l’utilisateur peut saisir les données
-qui devront être enregistrées.</p>
-
-<h4>
-<a id="vi--les-diagrammes-de-séquences" class="anchor" href="#vi--les-diagrammes-de-s%C3%A9quences" aria-hidden="true"><span class="octicon octicon-link"></span></a>VI- Les diagrammes de séquences</h4>
-
-<p>Les diagrammes suivants nous permettrons de mettre en exergue une description chronologique des
-interactions entre le système et les acteurs. Ils ne couvrent pas l’ensemble des interactions et sont en liens
-avec les diagrammes précédents afin de maintenir une traçabilité ́. Aussi nous avons associe à ces diagrammes
-une vue dite boıte noire afin de collecter les différents messages transmis entre le système et les acteurs</p>
-
-<p><strong>Autonomie</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ces diagrammes correspondent au cas d’utilisation Autonomie. Ici, nous exprimons le fait que le système,
-doit pouvoir fonctionner continuellement, il est prévu qu’un technicien puisse mettre en marche un groupe
- ́électrogène en cas de coupure d'électricité par exemple, pour fournir l’électricité nécessaire aux différents
-serveurs ; afin d’assurer une pérennité des différents services</p>
-
-<p><strong>Interroger</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ces diagrammes correspondent au cas d’utilisation Interroger. Ils expriment l’interrogation d’un serveur
-depuis une machine terminale (utilisateur lambda ). En effet un utilisateur pour pouvoir interroger un serveur
-doit au préalable mettre sous-tension son terminal, ensuite il peut soit faire une consultation concernant une
-information donnée, soit effectuer une recherche (Rechercher une personne ). Les serveurs doivent en retour
-pouvoir fournir une réponse `
-a cette interrogation</p>
-
-<p><strong>Renseigner</strong>
-<img src="/images/logo.png" alt="GitHub Logo">
-Ces diagrammes correspondent au cas d’utilisation Renseigner. Ils mettent en exergue, le fait de pouvoir
-renseigner les différents serveurs qui appartiennent à notre système. Il faut au préalable que ceux- ci soient
-mis en marche, ensuite il est possible d’effectuer une saisie de données depuis des machines terminales
-spécifiques, afin de remplir les tables des bases de données existantes sur les différents serveurs.</p>
-
-<h4>
-<a id="17--conclusion" class="anchor" href="#17--conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.7- Conclusion</h4>
-
-<hr>
-
-<p>Nous arrivons au terme de la modélisation SysML. Nous avons éclairci les points suivants:
-— Définition du système et de son contexte
-— Élaboration du cahiers des charges à l’aide du diagramme d’exigences
-— Définition d’un certain nombre de cas d’utilisation en lien avec le cahier des charges
-— Description du déroulement de certaines actions avec le diagramme d’activité
-— Planification des interactions du système avec l’extérieur par le diagramme de séquence
-Il s’agit maintenant de changer de prisme de conception. Nous allons d'écrire la partie la plus importante de cette documentation à travers le prisme logiciel cette fois.</p>
-
-<h2>
-<a id="partie-ii--approche-de-modélisation-logicielle" class="anchor" href="#partie-ii--approche-de-mod%C3%A9lisation-logicielle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Partie II : Approche de modélisation logicielle</h2>
-
-<hr>
-
-<h4>
-<a id="i-introduction" class="anchor" href="#i-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>I-Introduction</h4>
-
-<p>L’objectif de cette partie de la modélisation, consiste à proposer un modèle de notre système d’information
-vu d’un prisme logiciel cette fois ci. En effet, l’utilisation de UML pour modéliser ce système apparaît comme
-une  ́évidence dans la mesure ou la modélisation UML permet d’obtenir une modélisation de tr<code>es haut niveau
-indépendante des langages et des environnements, aussi d’exprimer dans un seul modèle tous les aspects
-statiques, dynamiques, spécifications, etc... Ce qui constitue notre principal objectif. Pour ce faire, nous allons
-tout d’abord procéder</code>
-a une définition succincte du cahier de charges, puis nous exprimerons par la suite
-les aspects Fonctionnel (diagrammes de Cas d’Utilisation), Statique (diagrammes de Classes), Dynamique
- ́
-(diagrammes d’ Etats, diagrammes activistes), pour chaque exigence exprimée dans le dit cahier de charges.</p>
-
-<h4>
-<a id="ii-définition-du-cahier-des-charges" class="anchor" href="#ii-d%C3%A9finition-du-cahier-des-charges" aria-hidden="true"><span class="octicon octicon-link"></span></a>II-Définition du cahier des charges</h4>
-
-<p>Voici une liste de phrases simples visant à définir les besoins fonctionnels de notre application. Nous
-essaierons de satisfaire chacune d’elle et de détailler leur satisfaction dans les parties suivantes.
-1. Permettre aux proches d’un sinistre de pouvoir consulter les informations de celui-ci.
-2. Permettre `
-a une ONG d’organiser et gérer une campagne de vaccination.
-3. Permettre aux ONG de se coordonner.
-4. Permettre au personnel sur place de gérer les stocks dans les infrastructures.
-5. Permettre l’information pertinente des populations.
-Pour chacune des exigences précédentes nous présenterons les diagrammes selon la démarche suivante :
- ́
-Cas → Classe → Etat → Activité.</p>
-
-<h4>
-<a id="iii-réponses-aux-exigences" class="anchor" href="#iii-r%C3%A9ponses-aux-exigences" aria-hidden="true"><span class="octicon octicon-link"></span></a>III-Réponses aux exigences</h4>
-
-<h5>
-<a id="iii1--permettre-aux-proches-dun-sinistré-de-pouvoir-consulter-les-informations-de-celui-ci" class="anchor" href="#iii1--permettre-aux-proches-dun-sinistr%C3%A9-de-pouvoir-consulter-les-informations-de-celui-ci" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.1- Permettre aux proches d'un sinistré de pouvoir consulter les informations de celui-ci</h5>
-
-<p>Les proches d’un sinistre peuvent consulter ses informations. Il y a deux notions à  ́éclaircir : la première,
-appelons la notion information, est le fait qu’un sinistre doit effectivement avoir des informations qui
-puissent aider ses proches `
-a le retrouver ; la deuxième, appelons la notion proche, implique que des relations
-sociales entre les sinistres doivent être prises en charge au sein de notre application. Nous allons  ́éclaircir ces
-deux notions à l’aide de diagrammes UML dans les parties suivantes</p>
-
-<p><strong>Éclaircissement des notions</strong>
-<img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Nous n’avons pas représente l’authentification par soucis de clarté. Il ne faut pas que n’importe quel utilisateur sache ou se trouve un réfugie. Par exemple, lors d’une guerre civile, si un sinistre est recherche par un
-chef de guerre et que ce sinistre est recense dans un camp de réfugie, il ne doit pas pouvoir le localiser. Seul
-les personnes autorisées par le réfugie peuvent accéder aux informations.
-<img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Les points importants `
-a noter ici sont les relations et la visibilité d’une fiche de liaison.
-Une relation signifie que deux sinistres peuvent être qualifies de ”proches”.
-La visibilité d’une fiche de liaison permet de protéger ses informations et de ne les partager qu’avec un
-groupe restreint.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Nous considérons ici que la gestion des mouvement des réfugies s’effectue dans un camp de réfugies donne. Lorsqu'un
-agent qui travaille dans ce camp désire gérer le mouvement d’un réfugié par rapport à ce camp, il commence par lancer
-l’outil de gestion de mouvements de réfugiés. Il doit ensuite entrer les informations nécessaires à son authentification
-(Identifiant agent,mot de passe, etc ...). Pour des raisons de sécurité, tout comme pour le diagramme d'états ”Gestion
-Campagne”, s’il survient trois erreurs consécutives d’authentification, le compte utilisateur est bloque et on fait appel
-a un administrateur qui renvoie de nouvelles informations d’authentification pour cet agent. S’il y a eu moins de
-`
-trois erreurs et que l’identifiant et le mot de passe sont corrects, alors l’agent peut accéder à l’interface de gestion de
-mouvements sur lequel il peut soit modifier des mouvements déjà existants, soit enregistrer un nouveau mouvement.</p>
-
-<ul>
-<li>Si l’agent effectue un clic sur le bouton ”enregistrer” l’outil passe à l’ ́état ”enregistrement mouvement”. L’utilisateur peut donc dans cet état vérifier si il existe déjà des informations relatives au réfugie concerne, si oui il récupère
-ces informations , sinon il effectue une nouvelle saisie des informations suivantes : Identité(nom, prénom, date de
-naissance, sexe, etc), type de mouvement (flux entrant ou sortant du camp), date et lieu de l’enregistrement, motif,
-etc ... Si l’agent valide (clic bouton valider) les informations saisies et que ces données sont valides, l’outil entre dans l’état ”envoi des données” dans lequel il effectue un transfert de ces données vers un serveur, puis il se met en attente
-d’un accusé de réception. Quand l’accusé de réception est reçu, l’outil passe à l’état ”fin enregistrement” dans lequel
-il affiche une confirmation de l’enregistrement des données. Apres quoi, l’agent peut soit demander d’effectuer un
-nouvel enregistrement et l’outil retournera <code>
-a l’état ”enregistrer mouvement”, soit faire une demande de modification
-́
-et passer</code>
-a l’ Etat
-modification mouvement, soit effectuer une déconnexion ce qui amènera l’outil à retourner `
-a l’état authentification”.
-** Si l’agent effectue un clic sur le bouton ”modifier” l’outil passe à l’état ”modification mouvement”. L’utilisateur
-peut alors choisir une ligne parmi tous les enregistrements existants, sur laquelle il peut faire des modifications. De
-même, si ces modifications sont validées par l’agent et que les données sont valides, l’outil entre dans l’etat ”envoi des données” et il s’en suit les mêmes actions exprimées dans le paragraphe précédent.</li>
-</ul>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Ici, le personnel d’un camp gère les mouvements des sinistres présents dans le camp. Pour cela, le personnel
-doit d’abord se connecter. Ensuite, si le réfugié n’existe pas dans le camp, un profil lui est créé, sinon, le personnel cherche à obtenir les informations le concernant. Si le réfugié sinistre n’a effectue aucun déplacement,
-alors le personnel devra saisir le type, le motif, la date et le lieu du mouvement. Si un mouvement a déjà
-été effectue, alors le personnel modifiera ces informations. Une fois les données saisies, le mouvement est
-enregistre pour le sinistre.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Dans le cas présent, un utilisateur veut consulter les informations d’un réfugié. Pour cela il devra effectuer
-une recherche contenant le nom, l’age et la ville d’origine du réfugié. Une fois les informations saisies, la
-recherche s’effectue et lui donnera la liste des réfugiés correspondants.</p>
-
-<h5>
-<a id="iii2--permettre-à-une-ong-dorganiser-et-gérer-un-campagne-de-vaccination" class="anchor" href="#iii2--permettre-%C3%A0-une-ong-dorganiser-et-g%C3%A9rer-un-campagne-de-vaccination" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.2- Permettre à une ONG d'organiser et gérer un campagne de vaccination</h5>
-
-<p>Afin de rendre le travail sur le terrain efficace, il faut qu’il soit organise. Pour cela, il faut que dans notre
-application, une ONG puisse planifier ses stratégies de soutiens à travers différentes campagnes. Il a deux
-notions a  ́éclaircir : la première, appelons la notion ONG est le fait de représenter un utilisateur particulier
-dans notre application ; la deuxième, appelons la notion campagne est le fait de représenter une campagne
-organisée par une ONG.</p>
-
-<p>** Éclaircissement des notions**</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<h5>
-<a id="iii3--permettre-aux-ong-de-se-coordonner" class="anchor" href="#iii3--permettre-aux-ong-de-se-coordonner" aria-hidden="true"><span class="octicon octicon-link"></span></a>III.3- Permettre aux ONG de se coordonner</h5>
-
-<p>Tous les comptes qualifies de professionnels ont accès à certaines données sensibles. Ces données peuvent
-permettre de planifier des campagnes, réapprovisionner des stocks..</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Les catastrophes peuvent être attachées à d'autres classes selon les besoins, elles peuvent être par exemple
-reliées à un lieu, une durée,... par soucis de simplification ces classes n’apparaissent pas ici. Il en est de même
-pour les campagnes.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Lorsqu'une ONG désire gérer une campagne, une personne membre de cette ONG doit entrer l’identifiant
-et le mot de passe correspondants à cette ONG. Pour des raisons de sécurité, s’il y a eu trois erreurs
-consécutives, lors de la quatrième fois que l’utilisateur valide l’identifiant et le mot de passe qu’il a entres, le compte est bloque et il ne sera débloqué que lorsque l’administrateur l’aura fait et aura renvoyé un nouvel
-identifiant avec un nouveau mot de passe a <code>l’ONG.
-S’il y a eu moins de trois erreurs et que l’identifiant et le mot de passe sont corrects, alors l’utilisateur
-membre de l’ONG choisit s’il désire créer une nouvelle campagne ou s’il désire en modifier une déjà créée.
-S’il souhaite créer une nouvelle campagne, alors il doit choisir un sujet puis le valider, il doit ensuite saisir
-une zone cible et la valider et pour finir, il doit choisir la population cible et valider à nouveau. La campagne
-sera alors créée.
-Si le membre de l’ONG désire modifier une campagne déjà créée, il doit alors entrer le sujet, la zone cible et
-la population cible de la campagne</code>
-a modifier et valider ces informations.
-Si aucune campagne créée par l’ONG identifiée ne correspond aux données entrées par l’utilisateur, alors ce
-dernier est invite `
-a entrer de nouveau les données correspondantes à la campagne à modifier.
-Si une campagne créée par l’ONG identifiée correspond aux données entrées, alors le membre de l’ONG
-doit saisir un nouveau sujet et le valider, une nouvelle zone cible et la valider et il doit entrer une nouvelle
-population cible et la valider  ́également. La campagne sera alors modifiée.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>On considère dans notre cas qu’une ONG veut gérer une campagne. Pour cela elle doit d’abord s’authentifier.
-Si les informations d’authentification sont erronées, alors l’ONG doit retenter de se connecter avec des
-informations valides. Une fois la connexion réussie et la demande de gérer une campagne effectuée, si les
-informations sur la campagne n’ont pas  ́et ́e saisies, l’ONG doit saisir le type, le sujet, la zone cible et la
-population cible de la campagne. Si l’une de ces informations est erronée, elle devra être ressaisie jusqu'à ce
-qu’elle soit valide. Si les données de la campagne ont déjà  ́été saisies par le passe, l’ONG peut les modifier (si
-les informations modifiées ne sont pas valides, l’ONG devra les ressaisir jusqu'à ce qu’elles soient correctes).
-Une fois toutes les informations saisies, elles seront enregistrées pour la campagne en cours.</p>
-
-<h5>
-<a id="iii-3-permettre-aux-ong-de-se-coordonner" class="anchor" href="#iii-3-permettre-aux-ong-de-se-coordonner" aria-hidden="true"><span class="octicon octicon-link"></span></a>III-3 Permettre aux ONG de se coordonner</h5>
-
-<p>Cette exigence est satisfaite implicitement par l’exigence précédente. Il suffit que les responsables des
-différentes ONG consultent les informations relatives aux autres ONG et qu’ils choisissent les mesures `
-a
-prendre. Cela relève plus de décisions politiques au sens large et cela nous concerne peu ou serai assez
-complexe à mettre en place (mécanismes de rappel de campagne, algorithmes de suggestion de campagne,
-etc...)</p>
-
-<h5>
-<a id="iii-4-permettre-au-personnel-sur-place-de-gérer-les-stocks-dans-les-infrastructures" class="anchor" href="#iii-4-permettre-au-personnel-sur-place-de-g%C3%A9rer-les-stocks-dans-les-infrastructures" aria-hidden="true"><span class="octicon octicon-link"></span></a>III-4 Permettre au personnel sur place de gérer les stocks dans les infrastructures</h5>
-
-<p>La gestion de stock implique que chaque infrastructure doit être administrée par une personne ou un
-groupe de personnes. On doit pouvoir effectuer des commandes en cas de ruptures de stock. Il y a deux
-notions à  ́éclaircir : la première, appelons la gestion, est la représentation d’un utilisateur particulier charge
-de la gestion des stock dans une infrastructure ; la deuxième, appelons la stock, est la représentation d’un
-stock de produits.</p>
-
-<p><strong>Éclaircissement des notions</strong>
-<img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Un compte d’administration d’une infrastructure doit fournir une possibilité de gestion de stock. C’est un
-type de compte professionnel par infrastructure.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Il existe une multitude de patrons UML pour la gestion de stock mais par souci de simplicité nous en avons
-conçu un. Pour  ́éviter de stocker plusieurs fois les détails d’un produit nous avons décide de faire une classe
-de détail dédiée. Le compte d’administration peut être représente par un compte d’une personne morale
-dans un camp de réfugies par exemple et il administrera tout le camp de réfugies.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"> afin de gérer le stock, on vérifie le niveau de l’inventaire. S’il y a encore assez de produits en stock, on ne
-commande rien alors que si le nombre de produits restant est faible, on recherche le produit à commander
-et une fois trouve, on le commande.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Pour gérer un stock, un professionnel, qui est soit une personne membre d’une ONG, soit un personnel d’un
-camp ou soit un employé de sante doit tout d’abord s’authentifier. Si l’identifiant entre et le mot de passe
-entre correspondent <code>
-a l’identifiant et au mot de passe d’un professionnel, alors le professionnel peut consulter
-le stock, sinon il est invite</code>
-a entrer de nouveau un identifiant et un mot de passe.
-Si le stock est insuffisant, le professionnel connecte peut alors passer une commande du(des) produit(s) dont
-le stock est insuffisant. Si le stock restant est suffisant, le professionnel ne passe pas de commande.</p>
-
-<h5>
-<a id="iii-5-permettre-la-diffusion-de-messages-pertinents-aux-populations" class="anchor" href="#iii-5-permettre-la-diffusion-de-messages-pertinents-aux-populations" aria-hidden="true"><span class="octicon octicon-link"></span></a>III-5 Permettre la diffusion de messages pertinents aux populations</h5>
-
-<p>Les sinistres peuvent être cibles de messages aux objectifs différents. Ils sont cibles par des organismes
-pour des campagnes. Il y a une notion a  ́éclaircir : notion information</p>
-
-<p><strong>Éclaircissement des notions</strong></p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Un sinistre est cible par une campagne et reçoit des messages la concernant. Ces messages sont choisis et
-envoyés par un responsable au sein d’une ONG. C’est une fa ̧con de contribuer à l’information pertinente des
-populations.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"> à chaque nouvelle information, celle-ci est vérifiée afin de savoir si cette information est importante ou non.
-Si elle ne l’est pas, elle ne sera pas diffusée et si elle est importante, elle sera diffusée via réseau GSM, wi-fi
-et radio. Cependant un incident radio, GSM et/ou wi-fi peut avoir lieu. Dans ce cas, si un incident lors de
-la diffusion radio a lieu par exemple, le système continuera d’essayer de diffuser cette information via radio
-jusqu'à ce qu’elle soit bien envoyée, et il en est de même s’il se produit un incident de diffusion via wi-fi ou
-via GSM</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Dans notre cas, une ONG veut diffuser une information. L’information est d’abord triée, afin de déterminer
-son importance. Si elle n’est pas importante, elle n’est pas diffusée, sinon, elle sera diffusée.</p>
-
-<h4>
-<a id="iv-diagrammes-complémentaires" class="anchor" href="#iv-diagrammes-compl%C3%A9mentaires" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV-Diagrammes complémentaires</h4>
-
-<h5>
-<a id="iv-1-diagrammes-de-cas" class="anchor" href="#iv-1-diagrammes-de-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV-1 Diagrammes de Cas</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Voici le diagramme de cas complet du système, les commentaires ont  ́été place directement sur le diagramme
-car ils se rapportent `
-a certaines parties du diagramme.</p>
-
-<h5>
-<a id="iv-2-diagrammes-de-classe" class="anchor" href="#iv-2-diagrammes-de-classe" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV-2 Diagrammes de Classe</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo">
-Voici le diagramme de classe complet du système. Bien sûr, on pourrait ajouter des  ́éléments comme la
-gestion des droits d’accès mais cela alourdirai considérablement le diagramme.
-On retrouve l’ensemble des petits diagrammes de classe utilises dans les parties précédent</p>
-
-<h5>
-<a id="iv-3-diagrammes-detat" class="anchor" href="#iv-3-diagrammes-detat" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV-3 Diagrammes d'Etat</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo">
-Lorsqu'un utilisateur désiré rechercher un réfugié, il doit entrer dans un terminal (mobile ou non) le nom,
-le prénom et la date de naissance de la personne qu’il désire trouver. L’utilisateur peut envoyer la requête
-au serveur uniquement si tous les champs requis sont bien tous remplis (nom, prénom et date de naissance
-dans notre cas).
-Une fois la requête envoyée au serveur, le serveur vérifie dans la base de données contenant les camps ainsi que
-les réfugies qui s’y trouvent si la personne recherchée se trouve dans l’un des camps. Si c’est le cas, le serveur
-envoie les informations relatives au camp o<code>
-u se trouve le réfugie recherche à l’utilisateur, sinon le serveur
-signale à l’utilisateur qu’aucune personne n’a  ́été trouvée et le renvoie sur la page de saisie d’informations
-afin de chercher une personne</code>
-a nouveau s’il le désire.
-Cependant, un incident réseau peut avoir lieu lors de la validation des informations par l’utilisateur ou lors
-de la réponse du serveur.</p>
-
-<h5>
-<a id="iv4-diagrammes-dactivité" class="anchor" href="#iv4-diagrammes-dactivit%C3%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV.4 Diagrammes d'activité</h5>
-
-<p><img src="/images/logo.png" alt="GitHub Logo">
-On considéré ici qu’un sinistre (ie. personne qui subit les conséquences liées a une catastrophe et qui ne se
-trouve pas forcement dans un camp de réfugiés) peut créer un compte depuis un terminal : Sur un terminal,
-une fois l’application de création de compte lancée, l’utilisateur peut saisir des informations le concernant
-via un formulaire d’inscription . si les informations saisies sont déjà utilises ou erronées l’outil d’inscription
-redemande une saisie des informations par un nouveau formulaire. Si les informations sont valides alors
-elles seront enregistrées sur le serveur sous la forme d’un nouveau compte afin de permettre une connexion
-ultérieure.</p>
-
-<p><img src="/images/logo.png" alt="GitHub Logo"></p>
-
-<p>Dans notre cas, un sinistre veut rechercher un camp. Pour cela, il doit saisir un lieu via son terminal. Si le
-lieu n’existe pas, il devra en retaper un valide. Si il est correct, la recherche s’effectue et lui donnera la liste
-des camps à proximité du lieu.</p>
-
-<h4>
-<a id="v-conclusion" class="anchor" href="#v-conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>V-Conclusion</h4>
-
-<p>Nous arrivons au terme de la modélisation UML. Nous avons éclairci les points suivants
-— Définition du cahiers des charges,
-— Réponse aux exigences grâce à certains cas d’utilisation en lien avec le cahier des charges,
-— Description précise et concise du l’état du système via des diagrammes de classes
-— Description du déroulement de certaines actions avec les diagrammes d’activités,
-— Planification des interactions du système avec l’extérieur par le diagramme de séquence.
-UML est un support pour les développeurs, la compréhension du problème leur ai facilitée et ils peuvent
-débuter la programmation directement au contraire du sysML qui est plus adapte d’un point de vue
-ingénierie.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Humanitarian Modeling maintained by <a href="https://github.com/NephtysOrg">NephtysOrg</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+    </body>
 </html>
